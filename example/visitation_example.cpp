@@ -55,12 +55,12 @@ int main()
       | option_set::make<option::C>()
       ;
 
-    // Make a visitor and visito the options.
+    // Make a visitor and visit the options.
     option_set_visitor visitor;
     visit(visitor, options);
 
     // Print the names of the selected options.
-    std::cout << "Compute options given:\n";
+    std::cout << "Options given:\n";
     for (auto const& name : visitor.result)
     {
         std::cout << "  - " << name << '\n';

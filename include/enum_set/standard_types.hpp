@@ -14,4 +14,4 @@ using std::uint8_t;
 
 }  // namespace enum_set
 
-#endif // ENUM_SET_STDTYPES_HPP
+#endif // ENUM_SET_STANDARD_TYPES_HPP

@@ -28,7 +28,7 @@ make_bit_mask() noexcept
 template <typename... Ts>
 class type_set
 {
-    static_assert(sizeof...(Ts) > 0, "type_set types must be non-empty");
+    static_assert(sizeof...(Ts) > 0, "type set types must be non-empty");
 protected:
     using mask_type = bit_mask<sizeof...(Ts)>;
 
@@ -86,8 +86,7 @@ public:
     static constexpr type_set make() noexcept
     {
         static_assert(index<T>() < sizeof...(Ts), "Invalid type for type set");
-        constexpr mask_type mask{detail::make_bit_mask<T, Ts...>()};
-        return type_set(mask);
+        return type_set{detail::make_bit_mask<T, Ts...>()};
     }
 
     /// Checks if the type set contains an element `T`.
@@ -150,7 +149,7 @@ public:
     }
 
     /// Returns the set complement of a type set.
-    /// The set complement contains all elements not contains in the original type set.
+    /// The set complement contains all elements not contained in the original type set.
     constexpr type_set
     operator~ () const noexcept
     {

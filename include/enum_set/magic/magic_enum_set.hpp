@@ -30,7 +30,7 @@ struct magic_enum_set_factory
     static constexpr auto indices = std::make_index_sequence<values.size()>();
 
     template <size_t... Indices>
-    static constexpr auto make_type(std::index_sequence<Indices...>) noexcept
+    static auto make_type(std::index_sequence<Indices...>) noexcept
         -> value_set<Enum, values[Indices]...>;
 
     using type = decltype(make_type(indices));

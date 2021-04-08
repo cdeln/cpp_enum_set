@@ -31,7 +31,7 @@ struct type_visitor_for
     }
 };
 
-/// Base case for `type_visitor_for` when there is only one type left.
+/// Base case of `type_visitor_for` when there is only one type left.
 template <typename T>
 struct type_visitor_for<T>
 {

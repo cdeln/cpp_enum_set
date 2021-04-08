@@ -65,7 +65,7 @@ struct bit_storage_factory
 };
 
 /// Declaration of the underlying storage of `BitCount` bits.
-/// The actual number of bytes is calculcated from the number of bits.
+/// The actual number of bytes are calculcated from the number of bits.
 template <size_t BitCount>
 using bit_storage = typename bit_storage_factory<BitCount>::type;
 
@@ -229,10 +229,7 @@ public:
     {
         static_assert(
             sizeof...(Bools) == Size,
-            "Number of bits in bit_mask constructor must match the size of the bit_mask");
-        static_assert(
-            detail::all(std::is_same<Bools, bool>::value...),
-            "bit_mask constructor arguments must be bools");
+            "Number of bits in bit mask constructor must match the size of the bit mask");
     }
 
     /// Constructs a bit mask from a set of `indices...` specifying which bits to set.
@@ -261,7 +258,7 @@ public:
         return Size;
     }
 
-    /// Tests of a bit at a specified index.
+    /// Test of a bit at a specified index.
     /// The index must be less than the bit mask size, otherwise an exception is thrown.
     /// Returns `true` if the bit at index is set, otherwise `false`.
     constexpr bool get(size_t index) const
@@ -329,15 +326,15 @@ public:
         clear(Index);
     }
 
-    /// Compares to bit masks.
+    /// Compares two bit masks.
     /// Returns `true` of all bits are equal, otherwise `false`.
     friend constexpr bool operator==(bit_mask const& lhs, bit_mask const& rhs) noexcept
     {
         return detail::operator==(lhs.storage, rhs.storage);
     }
 
-    /// Compares to bit masks for inequality.
-    /// Returns `true` of any bit differs.
+    /// Compares two bit masks for inequality.
+    /// Returns `true` of any bit differs, otherwise `false`.
     friend constexpr bool operator!=(bit_mask const& lhs, bit_mask const& rhs) noexcept
     {
         return !(lhs == rhs);

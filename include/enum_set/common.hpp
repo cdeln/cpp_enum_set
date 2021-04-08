@@ -18,7 +18,7 @@ constexpr bool all() noexcept
 }
 
 /// Returns `true` if all arguments are `true`, otherwise `false`.
-/// Can be replaced by an built in fold expression in C++17.
+/// Can be replaced by a built in fold expression in C++17.
 template <typename... Bools>
 constexpr bool all(bool first, Bools... rest) noexcept
 {
@@ -32,7 +32,7 @@ constexpr bool any() noexcept
 }
 
 /// Returns `true` if any argument is `true`, otherwise `false`.
-/// Can be replaced by an built in fold expression in C++17.
+/// Can be replaced by a built in fold expression in C++17.
 template <typename... Bools>
 constexpr bool any(bool first, Bools... rest) noexcept
 {

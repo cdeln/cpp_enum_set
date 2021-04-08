@@ -23,15 +23,15 @@ struct integer_set_factory
     static_assert(std::is_integral<Integer>::value, "Type must be an integer");
     static_assert(Size > 0, "Size must be strictly positive");
 
-    // Helper method for unpacking a `std::integer_sequence` into a `value_set`.
     template <Integer... Values>
-    static constexpr value_set<Integer, Values...>
+    static value_set<Integer, Values...>
     make_type(std::integer_sequence<Integer, Values...>);
 
     using type = decltype(make_type(std::make_integer_sequence<Integer, Size>()));
 };
 
 /// Makes a `value_set` type of `Size` consecutive integer values of type `Integer`.
+/// See `integer_set_factory` for details.
 template <typename Integer, size_t Size>
 using make_integer_set = typename integer_set_factory<Integer, Size>::type;
 

@@ -6,7 +6,7 @@
 #include <vector>
 
 // Define an option as an unscoped enumeration.
-// This reflects a "legacy enum" that produce a integer bit mask when "or'ed".
+// This reflects a "legacy enum" that produce an integer bit mask when "or'ed".
 // Note that `magic_enum` requires us to set the `MAGIC_ENUM_RANGE_MAX` value
 // big enough in order to recognize `x9` below.
 enum option
@@ -23,7 +23,7 @@ enum option
     x9 = (1 << 9)
 };
 
-// Define a set of options as a `value_set` using the magicical `make_magic_enum_set` meta function.
+// Define a set of options as a `value_set` using the magical `make_magic_enum_set` meta function.
 using option_set =
     enum_set::make_magic_enum_set<
         option
@@ -40,7 +40,7 @@ int main()
     // Select some options.
     const option_set options = x1 | x3 | x7 | x8;
 
-    // Print the options hold by the option set.
+    // Print the options in the option set.
     for (auto option : options)
     {
         switch (option)

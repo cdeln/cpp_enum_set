@@ -1,5 +1,5 @@
-#ifndef CDELN_VALUE_SET_VISITOR_HPP
-#define CDELN_VALUE_SET_VISITOR_HPP
+#ifndef ENUM_SET_VALUE_SET_VISITOR_HPP
+#define ENUM_SET_VALUE_SET_VISITOR_HPP
 
 #include <enum_set/value_set.hpp>
 
@@ -47,7 +47,7 @@ struct value_visitor_for<Type, Value>
 
 }  // namespace detail
 
-/// Visits all types in a type set using a `Visitor`.
+/// Visits all values in a value set using a `Visitor`.
 /// The `Visitor` needs to implement `template <Value> ? operator()()` for all values in the set.
 template <class Visitor, typename Type, Type... Values>
 constexpr void visit(Visitor&& visitor, value_set<Type, Values...> const& values)
@@ -59,4 +59,4 @@ constexpr void visit(Visitor&& visitor, value_set<Type, Values...> const& values
 
 }  // namespace enum_set
 
-#endif // CDELN_VALUE_SET_VISITOR_HPP
+#endif // ENUM_SET_VALUE_SET_VISITOR_HPP

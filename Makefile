@@ -1,4 +1,4 @@
-CXXFLAGS 	   := -Wall -Wextra -Wpedantic -Werror
+CXXFLAGS       := -Wall -Wextra -Wpedantic -Werror
 
 sources        := $(wildcard include/enum_set/*.hpp)
 example_srcs   := $(wildcard example/*.cpp)
@@ -7,7 +7,7 @@ test_sources   := $(wildcard test/*.cpp)
 test_cov_objs  := $(patsubst test/%.cpp,build/%.coverage.o,$(test_sources)) build/test_magic.coverage.o
 test_san_objs  := $(patsubst test/%.cpp,build/%.sanitize.o,$(test_sources)) build/test_magic.sanitize.o
 test_exes      := build/test_coverage.exe build/test_sanitize.exe
-base_flags 	   := $(CXXFLAGS) -O0 -g3 -Iinclude
+base_flags     := $(CXXFLAGS) -O0 -g3 -Iinclude
 test_flags     := $(base_flags) -Itest
 coverage_flags := $(test_flags) --coverage
 sanitize_flags := $(test_flags) -fsanitize-address-use-after-scope -fsanitize=address,undefined
@@ -42,7 +42,7 @@ build/magic_enum_set_example.exe: example/magic/magic_enum_set_example.cpp $(sou
 build:
 	mkdir build
 
-.PHONY: analyze test_coverage test_sanitize test cover report install docker_build docker_run clean
+.PHONY: analyze test_coverage test_sanitize test cover report install clean docker_build docker_run
 
 analyze:
 	cppcheck --bug-hunting --clang=$(shell which clang) -I ./include/ ./include/enum_set/*

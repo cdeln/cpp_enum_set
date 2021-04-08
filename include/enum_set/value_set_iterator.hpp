@@ -3,6 +3,7 @@
 
 #include <enum_set/bit_mask.hpp>
 #include <enum_set/common.hpp>
+#include <enum_set/standard_types.hpp>
 #include <enum_set/value_set.hpp>
 
 namespace enum_set
@@ -10,7 +11,7 @@ namespace enum_set
 namespace detail
 {
 
-/// Finds the first set bit at index greater or equal to an offset into a bit_mask.
+/// Finds the first set bit at index greater or equal to an offset into a bit mask.
 /// Returns the index of the bit if found, otherwise returns `mask.size()`.
 template <size_t N>
 constexpr size_t find(bit_mask<N> const& mask, size_t offset) noexcept
@@ -32,7 +33,7 @@ constexpr size_t find(bit_mask<N> const& mask, size_t offset) noexcept
 template <typename Type, Type... Values>
 class value_set<Type, Values...>::iterator
 {
-public:
+private:
     /// Pointer to the value set being iterated over.
     /// Changing the pointee invalidates this iterator.
     value_set const* container;
