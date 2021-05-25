@@ -1,0 +1,15 @@
+{
+  "name": "enum-set",
+  "version-semver": "0.1.0",
+  "default-features": [],
+  "features": {
+    "magic-enum": {
+      "description": "Build with magic_enum",
+      "dependencies": ["magic-enum"]
+    },
+    "test": {
+      "description": "Build tests",
+      "dependencies": ["doctest"]
+    }
+  }
+}
