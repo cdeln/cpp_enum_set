@@ -53,6 +53,8 @@ jobs:
         bash <(curl -s https://codecov.io/bash) -f coverage.info
 
   sanitize:
+    name: "sanitize${{ matrix.features && ' (with magic_enum)' }}"
+
     strategy:
       fail-fast: false
 
@@ -93,6 +95,8 @@ jobs:
       ${{ matrix.features && ', with magic_enum' || '' }})"
 
     strategy:
+      fail-fast: false
+
       matrix:
         os: [macos, ubuntu, windows]
 

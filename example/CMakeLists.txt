@@ -32,7 +32,7 @@ add_example(visitation_example)
 if(TARGET magic_enum::magic_enum)
   add_example(
       magic_enum_set_example
-      SOURCES "${PROJECT_SOURCE_DIR}/magic_enum_set_example.cpp"
+      SOURCES "${PROJECT_SOURCE_DIR}/magic/magic_enum_set_example.cpp"
       LIBS magic_enum::magic_enum
   )
 endif()

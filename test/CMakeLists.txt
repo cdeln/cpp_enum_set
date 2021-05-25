@@ -45,7 +45,7 @@ create_test(test_value_set)
 if(TARGET magic_enum::magic_enum)
   create_test(
       test_magic_enum_set
-      SOURCES "${PROJECT_SOURCE_DIR}/test_magic_enum_set.cpp"
+      SOURCES "${PROJECT_SOURCE_DIR}/magic/test_magic_enum_set.cpp"
       LIBS magic_enum::magic_enum
   )
 endif()
