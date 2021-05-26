@@ -1,0 +1,131 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+    - master
+
+  pull_request:
+    branches:
+    - master
+
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+
+    # To enable coverage, go to https://codecov.io/, acquire a token, put it
+    # into your secrets (Settings > Secrets > New repository secret) and delete
+    # the "if" conditional below.
+    # If you do not wish to use codecov, then simply delete this job from the
+    # workflow.
+    if: "false"
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Install LCov
+      run: sudo apt-get update -q
+        && sudo apt-get install lcov -q -y
+
+    - name: Install vcpkg
+      uses: lukka/run-vcpkg@v7
+      with: 
+        setupOnly: true
+        vcpkgGitCommitId: 7c55ecac266fc3e554bc315053dc45c11ec811af
+
+    - name: Configure
+      run: cmake --preset=ci-coverage
+        -D "VCPKG_MANIFEST_FEATURES=test;magic-enum"
+
+    - name: Build
+      run: cmake --build build -j 2
+
+    - name: Test
+      working-directory: build
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        PS4: "\e[36m+++\e[0m "
+      run: |
+        set -x
+        ctest --output-on-failure -j 2
+        lcov -c -d .. -o coverage.info --include '${{ github.workspace }}/*'
+        lcov --list coverage.info
+        bash <(curl -s https://codecov.io/bash) -f coverage.info
+
+  sanitize:
+    name: "sanitize${{ matrix.features && ' (with magic_enum)' }}"
+
+    strategy:
+      fail-fast: false
+
+      matrix:
+        features: [";magic-enum", ""]
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Install vcpkg
+      uses: lukka/run-vcpkg@v7
+      with: 
+        setupOnly: true
+        vcpkgGitCommitId: 7c55ecac266fc3e554bc315053dc45c11ec811af
+
+    - name: Configure
+      env: { CXX: clang++-11 }
+      run: cmake --preset=ci-sanitizer
+        -D "VCPKG_MANIFEST_FEATURES=test${{ matrix.features }}"
+
+    - name: Build
+      run: cmake --build build -j 2
+
+    - name: Test
+      env:
+        ASAN_OPTIONS: "strict_string_checks=1:\
+          detect_stack_use_after_return=1:\
+          check_initialization_order=1:\
+          strict_init_order=1:\
+          detect_leaks=1"
+        UBSAN_OPTIONS: print_stacktrace=1
+      run: ctest --test-dir build --output-on-failure -j 2
+
+  test:
+    name: "test (${{ matrix.os }}\
+      ${{ matrix.features && ', with magic_enum' || '' }})"
+
+    strategy:
+      fail-fast: false
+
+      matrix:
+        os: [macos, ubuntu, windows]
+
+        features: [";magic-enum", ""]
+
+    runs-on: ${{ matrix.os }}-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Install static analyzers
+      if: matrix.os == 'ubuntu'
+      run: sudo apt-get install clang-tidy cppcheck -y -q
+
+    - name: Install vcpkg
+      uses: lukka/run-vcpkg@v7
+      with: 
+        setupOnly: true
+        vcpkgGitCommitId: 7c55ecac266fc3e554bc315053dc45c11ec811af
+
+    - name: Configure
+      run: cmake --preset=ci-${{ matrix.os }}
+        -D "VCPKG_MANIFEST_FEATURES=test${{ matrix.features }}"
+
+    - name: Build
+      run: cmake --build build --config Release -j 2
+
+    - name: Install
+      run: cmake --install build --config Release --prefix prefix
+
+    - name: Test
+      run: ctest --test-dir build --output-on-failure -C Release -j 2
