@@ -12,6 +12,13 @@ namespace enum_set
 namespace detail
 {
 
+/// Representation of a sequence of `Values...` of a certain `Type`.
+/// Used because `std::integer_sequence` does not work with enums on all platforms.
+template <typename Type, Type... Values>
+struct value_sequence
+{
+};
+
 /// Factory for `make_enum_sequence` meta function below.
 /// `Enum` must be of enumeration type.
 /// `Last` must be the last value of the `Enum` type.
@@ -30,7 +37,7 @@ struct enum_sequence_factory
         >;
 
     template <arithmetic_value_type... Values>
-    static std::integer_sequence<Enum, static_cast<Enum>(Values)...>
+    static value_sequence<Enum, static_cast<Enum>(Values)...>
     make_type(std::integer_sequence<arithmetic_value_type, Values...>);
 
     using type = decltype(make_type(make_arithmetic_sequence()));
@@ -56,7 +63,7 @@ struct enum_set_factory
 {
     template <Enum... Values>
     static value_set<Enum, Values...>
-    make_type(std::integer_sequence<Enum, Values...>);
+    make_type(detail::value_sequence<Enum, Values...>);
 
     using type = decltype(make_type(detail::make_enum_sequence<Enum, Last>()));
 };
