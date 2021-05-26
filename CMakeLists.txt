@@ -4,7 +4,7 @@ include(cmake/in-source-guard.cmake)
 
 project(
     enum_set
-    VERSION 0.1.0
+    VERSION 0.0.2
     DESCRIPTION "A library of type safe sets over fixed size collections of types or values, including methods for accessing, modifying, visiting and iterating over those."
     HOMEPAGE_URL "https://github.com/cdeln/cpp_enum_set"
     LANGUAGES CXX
