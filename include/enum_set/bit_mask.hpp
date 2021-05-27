@@ -238,10 +238,8 @@ public:
     /// Specifying any invalid index throws an `std::out_of_range` exception.
     template <
         typename... Indices,
-        std::enable_if_t<
-            ! detail::any(std::is_same<Indices, bool>::value...),
-            nullptr_t
-        > = nullptr
+        bool Enable = ! detail::any(std::is_same<Indices, bool>::value...),
+        std::enable_if_t<Enable, nullptr_t> = nullptr
     >
     constexpr bit_mask(Indices... indices)
         : storage{}

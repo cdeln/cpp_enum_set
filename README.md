@@ -1,4 +1,8 @@
 # cpp_enum_set
+
+![Build status](https://github.com/cdeln/cpp_enum_set/actions/workflows/ci.yml/badge.svg)
+[![GitHub release](https://img.shields.io/github/v/release/cdeln/cpp_enum_set)](https://github.com/cdeln/cpp_enum_set/releases)
+
 A library of type safe sets over fixed size collections of types or values,
 including methods for accessing, modifying, visiting and iterating over those.
 
