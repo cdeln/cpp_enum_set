@@ -6,6 +6,9 @@
 #include <enum_set/standard_types.hpp>
 #include <enum_set/value_set.hpp>
 
+#include <algorithm>
+#include <iterator>
+
 namespace enum_set
 {
 namespace detail
