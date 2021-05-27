@@ -1,29 +1,30 @@
 FROM ubuntu:20.04
 
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Install standard dependencies.
 RUN apt-get update && apt-get install -y \
     build-essential \
     clang \
-    cmake \
-    doctest-dev \
-    gcovr \
+    clang-tidy \
+    cppcheck \
+    curl \
     git \
-    wget
+    lcov \
+    tar \
+    unzip \
+    wget \
+    zip
 
-# Install cppcheck.
-# The version provided by apt is too old.
-RUN wget https://github.com/danmar/cppcheck/archive/2.4.1.tar.gz -O cppcheck.tar.gz \
-    && mkdir cppcheck-src \
-    && tar -xf cppcheck.tar.gz --strip-components 1 -C cppcheck-src \
-    && cmake -B cppcheck-bin -S cppcheck-src -DCMAKE_BUILD_TYPE=Release \
-    && cmake --build cppcheck-bin --parallel \
-    && cmake --install cppcheck-bin
+# Install minimal CMake version
+ENV CMAKE_VERSION=3.19.8
+RUN wget https://github.com/Kitware/CMake/releases/download/v${CMAKE_VERSION}/cmake-${CMAKE_VERSION}-Linux-x86_64.tar.gz \
+    && tar -xf cmake-${CMAKE_VERSION}-Linux-x86_64.tar.gz \
+    && cp -r cmake-${CMAKE_VERSION}-Linux-x86_64/* /usr/ \
+    && rm -rf cmake-${CMAKE_VERSION}-Linux-x64-64
 
-# Install magic_enum.
-RUN git clone https://github.com/Neargye/magic_enum.git \
-    && cd magic_enum \
-    && git checkout v0.7.2 \
-    && cmake -B build -S . \
-    && cmake --install build
+# Install vcpkg
+ENV VCPKG_DISABLE_METRICS=
+ENV VCPKG_ROOT=/vcpkg
+RUN git clone https://github.com/microsoft/vcpkg \
+    && ./vcpkg/bootstrap-vcpkg.sh

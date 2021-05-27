@@ -63,9 +63,10 @@ Requires at least C++14, and C++17 if you want to use it together with [magic en
 
 ## Installation
 
-To install the library, run `make install`.
+There are two ways of installing this library
 
-If you do not have Make installed, just copy the contents of the `include` folder to your installation path.
+  1. Poor mans installation: Just copy the contents of the `include` folder to your installation path.
+  2. Using CMake: see [BUILDING][1] for detailed installation instructions.
 
 ## Usage
 
@@ -120,23 +121,22 @@ See [this example](example/basic_tutorial.cpp) for a tutorial on available metho
 
 See [this example](example/visitation_example.cpp) for an illustration of the visitor pattern with `type_set`.
 
-## Development
+## Contributing
 
-For development, the following libraries are used
+Feel free to grab an issue from the [issue list][3]. Make a fork and submit a PR.
+We currently don't have any dedicated forum for discussion,
+if you have any ideas on how to improve the library and there is no issue for it,
+feel free to submit an issue yourself and we can discuss the idea there.
 
-  * [cppcheck](http://cppcheck.sourceforge.net) for static code analysis.
-  * [doctest](https://github.com/onqtam/doctest) for unit testing.
+See [HACKING][2] for detailed instructions on setting up the developer environment.
 
-See the [Dockerfile](Dockerfile) for detailed installation instructions on Ubuntu 20.04.
+See the [Dockerfile][4] for a minimal reproducible environment.
+Running the instructions given by the other documents inside the built container should work.
+The Dockerfile should, but is not guaranteed to, reflect the steps used by the CI.
+To see the exact steps used by the CI, see the [GitHub workflow config file][5].
 
-To run static analysis, run `make analyze`.
-
-To run the tests, run `make test`.
-
-To get coverage information, run `make cover`.
-
-To get a coverage report, run `make report`.
-
-To build the docker image, run `make docker_build`.
-
-To run the docker container, run `make docker_run`.
+[1]: BUILDING.md
+[2]: HACKING.md
+[3]: https://github.com/cdeln/cpp_enum_set/issues
+[4]: Dockerfile
+[5]: .github/workflows/ci.yml
