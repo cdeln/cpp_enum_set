@@ -88,9 +88,10 @@ ctest --test-dir build -C Release
 And here is the same on a Unix based system (Linux, macOS):
 
 ```sh
-cmake --preset=dev
+cmake --preset=ci-coverage
 cmake --build build
 ctest --test-dir build
+cmake --build --target coverage
 ```
 
 [1]: https://cmake.org/cmake/help/latest/manual/cmake-presets.7.html
