@@ -15,6 +15,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Install vcpkg
+      uses: lukka/run-vcpkg@v7
+      with:
+        setupOnly: true
+        vcpkgGitCommitId: 7c55ecac266fc3e554bc315053dc45c11ec811af
+
     - uses: actions/setup-python@v2
       with: { python-version: "3.6" }
 

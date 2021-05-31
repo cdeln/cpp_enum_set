@@ -1,6 +1,6 @@
 # cpp_enum_set
 
-![Build status](https://github.com/cdeln/cpp_enum_set/actions/workflows/ci.yml/badge.svg)
+[![Build status](https://github.com/cdeln/cpp_enum_set/actions/workflows/ci.yml/badge.svg)](https://github.com/cdeln/cpp_enum_set/actions)
 [![Code coverage](https://codecov.io/gh/cdeln/cpp_enum_set/branch/master/graph/badge.svg)](https://codecov.io/gh/cdeln/cpp_enum_set)
 [![GitHub release](https://img.shields.io/github/v/release/cdeln/cpp_enum_set)](https://github.com/cdeln/cpp_enum_set/releases)
 [![License](https://img.shields.io/github/license/cdeln/cpp_enum_set)](https://github.com/cdeln/cpp_enum_set/LICENSE)
