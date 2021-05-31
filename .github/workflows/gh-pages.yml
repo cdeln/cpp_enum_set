@@ -1,0 +1,45 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - master
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: actions/setup-python@v2
+      with: { python-version: "3.6" }
+
+    - name: Install m.css dependencies
+      run: pip3 install jinja2 Pygments
+
+    - name: Install Doxygen
+      run: sudo apt-get update -q
+        && sudo apt-get install doxygen -q -y
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      if: github.ref == 'refs/heads/main'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public
+
+    - name: Configure
+      run: cmake --preset=ci-ubuntu -D BUILD_DOCUMENTATION=ON
+
+    - name: Build
+      run: cmake --build build -t docs
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./build/docs/html
