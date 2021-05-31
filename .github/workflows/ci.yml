@@ -122,3 +122,37 @@ jobs:
 
     - name: Test
       run: ctest --test-dir build --output-on-failure -C Release -j 2
+
+  docs:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Install vcpkg
+      uses: lukka/run-vcpkg@v7
+      with:
+        setupOnly: true
+        vcpkgGitCommitId: 7c55ecac266fc3e554bc315053dc45c11ec811af
+
+    - uses: actions/setup-python@v2
+      with: { python-version: "3.6" }
+
+    - name: Install m.css dependencies
+      run: pip3 install jinja2 Pygments
+
+    - name: Install Doxygen
+      run: sudo apt-get update -q
+        && sudo apt-get install doxygen -q -y
+
+    - name: Configure
+      run: cmake --preset=ci-ubuntu -D BUILD_DOCUMENTATION=ON -D BUILD_TESTING=OFF
+
+    - name: Build
+      run: cmake --build build --target docs
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./build/docs/html

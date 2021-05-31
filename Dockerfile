@@ -8,9 +8,12 @@ RUN apt-get update && apt-get install -y \
     clang \
     clang-tidy \
     cppcheck \
+    doctest-dev \
+    doxygen \
     curl \
     git \
     lcov \
+    python3-pip \
     tar \
     unzip \
     wget \
@@ -28,3 +31,6 @@ ENV VCPKG_DISABLE_METRICS=
 ENV VCPKG_ROOT=/vcpkg
 RUN git clone https://github.com/microsoft/vcpkg \
     && ./vcpkg/bootstrap-vcpkg.sh
+
+# Install python dependencies
+RUN pip3 install jinja2 Pygments

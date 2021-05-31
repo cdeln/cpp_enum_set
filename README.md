@@ -1,7 +1,9 @@
 # cpp_enum_set
 
-![Build status](https://github.com/cdeln/cpp_enum_set/actions/workflows/ci.yml/badge.svg)
+[![Build status](https://github.com/cdeln/cpp_enum_set/actions/workflows/ci.yml/badge.svg)](https://github.com/cdeln/cpp_enum_set/actions)
+[![Code coverage](https://codecov.io/gh/cdeln/cpp_enum_set/branch/master/graph/badge.svg)](https://codecov.io/gh/cdeln/cpp_enum_set)
 [![GitHub release](https://img.shields.io/github/v/release/cdeln/cpp_enum_set)](https://github.com/cdeln/cpp_enum_set/releases)
+[![License](https://img.shields.io/github/license/cdeln/cpp_enum_set)](https://github.com/cdeln/cpp_enum_set/LICENSE)
 
 A library of type safe sets over fixed size collections of types or values,
 including methods for accessing, modifying, visiting and iterating over those.
@@ -120,6 +122,8 @@ using option_set =
 See [this example](example/basic_tutorial.cpp) for a tutorial on available methods and operators.
 
 See [this example](example/visitation_example.cpp) for an illustration of the visitor pattern with `type_set`.
+
+Reference documentation can be found [here](https://cdeln.github.io/cpp_enum_set).
 
 ## Contributing
 
