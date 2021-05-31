@@ -31,13 +31,6 @@ jobs:
       run: sudo apt-get update -q
         && sudo apt-get install doxygen -q -y
 
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      if: github.ref == 'refs/heads/main'
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./public
-
     - name: Configure
       run: cmake --preset=ci-ubuntu -D BUILD_DOCUMENTATION=ON -D BUILD_TESTING=OFF
 
