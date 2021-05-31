@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>enum_set::type_set class | enum_set</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">enum_set</a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li>
+              <a href="pages.html">Pages</a>
+              <ol>
+                <li><a href="about.html">About</a></li>
+              </ol>
+            </li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="type__set_8hpp.html">&lt;enum_set/type_set.hpp&gt;</a></div>
+          <div class="m-doc-template">template&lt;typename... Ts&gt;</div>
+          <span class="m-breadcrumb"><a href="namespaceenum__set.html">enum_set</a>::<wbr/></span>type_set <span class="m-thin">class</span>
+        </h1>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pro-types">Protected types</a></li>
+                <li><a href="#pro-attribs">Protected variables</a></li>
+                <li><a href="#friends">Friends</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>Represents a set of types from a fixed non-empty universe of types <code>Ts...</code>. The term element and type are used interchangeably in the documentation of this class.</p>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a260a667ae991d787ec10790fcff7c1f9" class="m-doc">index</a>(</span><span class="m-doc-wrap">) -&gt; size_t <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="ab47189047ae77702f57d39c832d6f916">
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              <span class="m-doc-wrap-bumper">static auto <a href="#ab47189047ae77702f57d39c832d6f916" class="m-doc-self">make</a>(</span><span class="m-doc-wrap">) -&gt; <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Creates a singleton type set containing a single element <code>T</code>.</dd>
+            <dt id="a700833d2d74d6dbb2b356c9c47cea2be">
+              <span class="m-doc-wrap-bumper">static auto <a href="#a700833d2d74d6dbb2b356c9c47cea2be" class="m-doc-self">capacity</a>(</span><span class="m-doc-wrap">) -&gt; size_t <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Returns the total number of possible elements the type set can hold.</dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aff5c7f31f5cf9bad505c45b18a87980f" class="m-doc">type_set</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html#a5b208ed74699065e8e4d25d29fd14b4f" class="m-doc">mask_<wbr />type</a> const&amp; mask) <span class="m-label m-flat m-warning">protected</span> <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="abb0006ac09cb6dde8de4b064fa1017f5">
+              <span class="m-doc-wrap-bumper"><a href="#abb0006ac09cb6dde8de4b064fa1017f5" class="m-doc-self">type_set</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp;) <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3b9e61c61d137acda6d6837914294780">
+              <span class="m-doc-wrap-bumper"><a href="#a3b9e61c61d137acda6d6837914294780" class="m-doc-self">type_set</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a>&amp;&amp;) <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4c59b751a1bfe62f8fc3fcda77d24b53">
+              <span class="m-doc-wrap-bumper"><a href="#a4c59b751a1bfe62f8fc3fcda77d24b53" class="m-doc-self">~type_set</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6a1422287056dd2a82a549f795ebb1b1">
+              <span class="m-doc-wrap-bumper"><a href="#a6a1422287056dd2a82a549f795ebb1b1" class="m-doc-self">type_set</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Constructs an empty type set.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename... Args, typename = std::enable_if_t&lt;             <a href="namespaceenum__set_1_1detail.html#a22b6f953a2fca0cf7afd92626758883f" class="m-doc">detail::<wbr />all</a>(std::is_same&lt;Args, bool&gt;::value...) ||            ! <a href="namespaceenum__set_1_1detail.html#a8dbc1b3a732b343af3587ed5a3b3d3bb" class="m-doc">detail::<wbr />any</a>(std::is_same&lt;Args, bool&gt;::value...)       &gt;&gt;</div>
+              <span class="m-doc-wrap-bumper"><a href="#afac80f94663f4e3bcb46214bf62f62e4" class="m-doc">type_set</a>(</span><span class="m-doc-wrap">Args... args) <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a7fc31e18e082d2e87277759bc4e640c9">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7fc31e18e082d2e87277759bc4e640c9" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp;) -&gt; <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a>&amp; <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a248d9726cb0d27f041ffd5bb19d53cf2">
+              <span class="m-doc-wrap-bumper">auto <a href="#a248d9726cb0d27f041ffd5bb19d53cf2" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a>&amp;&amp;) -&gt; <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a>&amp; <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#afb541225d0a769adbcd2fcd33ca80257" class="m-doc">has</a>(</span><span class="m-doc-wrap">) const -&gt; bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="ad852a97e3c7d3370095f7744a6baeed7">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad852a97e3c7d3370095f7744a6baeed7" class="m-doc-self">size</a>(</span><span class="m-doc-wrap">) const -&gt; size_t <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Returns the number of elements currently being hold by the type set.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa87dc9f4681cabada282802001765ec7" class="m-doc">count</a>(</span><span class="m-doc-wrap">) const -&gt; ptrdiff_t <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a85771a861678faf62daad41c9eff9acd" class="m-doc">empty</a>(</span><span class="m-doc-wrap">) const -&gt; bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              <span class="m-doc-wrap-bumper">void <a href="#a2a685b70ba6dc62471a5fde9343f5c25" class="m-doc">add</a>(</span><span class="m-doc-wrap">) &amp; <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              <span class="m-doc-wrap-bumper">void <a href="#a03dffd1d92b213d3abb398f45b27a13d" class="m-doc">remove</a>(</span><span class="m-doc-wrap">) &amp; <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt id="af925acd3ef14cb53f0b3eff6303244f9">
+              <span class="m-doc-wrap-bumper">void <a href="#af925acd3ef14cb53f0b3eff6303244f9" class="m-doc-self">clear</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Erases all elements from the type set.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a76f1132e48d81bef471f6b0268b2c619" class="m-doc">operator~</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab21b6aba4cdbd8f3ac9065d1e53e8f6e" class="m-doc">operator|=</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; another) &amp; -&gt; <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a>&amp; <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6ae4b12cf6aba7a1807e7f875dc9f08e" class="m-doc">operator&amp;=</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; another) &amp; -&gt; <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a>&amp; <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae5f656d63f86d2750e9e766fc61e17e9" class="m-doc">operator/=</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; another) &amp; -&gt; <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a>&amp; <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3549bae6a01b682233b9e2f693df161d" class="m-doc">operator^=</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; other) &amp; -&gt; <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a>&amp; <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section id="pro-types">
+          <h2><a href="#pro-types">Protected types</a></h2>
+          <dl class="m-doc">
+            <dt id="a5b208ed74699065e8e4d25d29fd14b4f">
+              using <a href="#a5b208ed74699065e8e4d25d29fd14b4f" class="m-doc-self">mask_type</a> = <a href="classenum__set_1_1bit__mask.html" class="m-doc">bit_<wbr />mask</a>&lt;sizeof...(Ts)&gt;
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pro-attribs">
+          <h2><a href="#pro-attribs">Protected variables</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <a href="classenum__set_1_1type__set.html#a5b208ed74699065e8e4d25d29fd14b4f" class="m-doc">mask_<wbr />type</a> <a href="#a89d9365a49c818f19c532fbc35595b18" class="m-doc">mask</a>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section id="friends">
+          <h2><a href="#friends">Friends</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a803e60c3d6a34429ae4b9002bdd67d30" class="m-doc">operator==</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; first,
+              <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; second) -&gt; friend bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aeafcce76783d9db8c0ae2d583ddb0c84" class="m-doc">operator!=</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; first,
+              <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; second) -&gt; friend bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#af683f5dfb99aefb1b14bc8df7a6d4ce1" class="m-doc">operator|</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; first,
+              <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; second) -&gt; friend <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6d3bc073a74429fe7265231dbf4f4ccc" class="m-doc">operator&amp;</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; first,
+              <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; second) -&gt; friend <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a297a6f592f782b1e24a0ec1f0b1e609a" class="m-doc">operator/</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; first,
+              <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; second) -&gt; friend <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a36c5400db01dd765782b09b37ecb74db" class="m-doc">operator^</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; first,
+              <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; second) -&gt; friend <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a20ea316f1ff9ce5afec6ec123e259f56" class="m-doc">operator&lt;=</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; first,
+              <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; second) -&gt; friend bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3bb1be192dd4a91f00146ab02085db58" class="m-doc">operator&gt;=</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; first,
+              <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; second) -&gt; friend bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0390c3c96d4d231c0c37048bdf3cc750" class="m-doc">operator&lt;</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; first,
+              <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; second) -&gt; friend bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a70949d68ef6cf2870dd7829dc2f6a8ab" class="m-doc">operator&gt;</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; first,
+              <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; second) -&gt; friend bool <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a260a667ae991d787ec10790fcff7c1f9"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename... Ts&gt;
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">static size_t enum_set::<wbr />type_set&lt;Ts&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a260a667ae991d787ec10790fcff7c1f9" class="m-doc-self">index</a>(</span><span class="m-doc-wrap">) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+<p>Returns the zero based index of type <code>T</code> in the set of types <code>Ts...</code>. If <code>T</code> is not present in <code>Ts...</code> the capacity of the type set is returned.</p>
+          </div></section>
+          <section class="m-doc-details" id="aff5c7f31f5cf9bad505c45b18a87980f"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename... Ts&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"> enum_set::<wbr />type_set&lt;Ts&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aff5c7f31f5cf9bad505c45b18a87980f" class="m-doc-self">type_set</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html#a5b208ed74699065e8e4d25d29fd14b4f" class="m-doc">mask_<wbr />type</a> const&amp; mask) <span class="m-label m-info">explicit</span>  <span class="m-label m-warning">protected</span> <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+<p>Constructs a type set from a bit mask. The constructor is private because the bit mask representation is not part of the interface.</p>
+          </div></section>
+          <section class="m-doc-details" id="afac80f94663f4e3bcb46214bf62f62e4"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename... Ts&gt;
+                template&lt;typename... Args, typename = std::enable_if_t&lt;             <a href="namespaceenum__set_1_1detail.html#a22b6f953a2fca0cf7afd92626758883f" class="m-doc">detail::<wbr />all</a>(std::is_same&lt;Args, bool&gt;::value...) ||            ! <a href="namespaceenum__set_1_1detail.html#a8dbc1b3a732b343af3587ed5a3b3d3bb" class="m-doc">detail::<wbr />any</a>(std::is_same&lt;Args, bool&gt;::value...)       &gt;&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"> enum_set::<wbr />type_set&lt;Ts&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afac80f94663f4e3bcb46214bf62f62e4" class="m-doc-self">type_set</a>(</span><span class="m-doc-wrap">Args... args) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+<p>Constructs a type set by specifying which types to hold. The specification can be given either through a sequence of bools telling which types to include or not, or by providing the indices of the types to include. If using the variant with indices, providing an invalid index throws an <code>std::out_of_range</code>. Providing bools is safe, providing an invalid set of bools is a compile time error.</p>
+          </div></section>
+          <section class="m-doc-details" id="afb541225d0a769adbcd2fcd33ca80257"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename... Ts&gt;
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool enum_set::<wbr />type_set&lt;Ts&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afb541225d0a769adbcd2fcd33ca80257" class="m-doc-self">has</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+<p>Checks if the type set contains an element <code>T</code>. Returns <code>true</code> if there is such an element, otherwise <code>false</code>.</p>
+          </div></section>
+          <section class="m-doc-details" id="aa87dc9f4681cabada282802001765ec7"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename... Ts&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">ptrdiff_t enum_set::<wbr />type_set&lt;Ts&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa87dc9f4681cabada282802001765ec7" class="m-doc-self">count</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+<p>Works like <code><a href="classenum__set_1_1type__set.html#ad852a97e3c7d3370095f7744a6baeed7" class="m-doc">size()</a></code>, but returns a signed integer instead. Useful if you want to avoid manual static casts between signed and unsigned integers.</p>
+          </div></section>
+          <section class="m-doc-details" id="a85771a861678faf62daad41c9eff9acd"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename... Ts&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool enum_set::<wbr />type_set&lt;Ts&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a85771a861678faf62daad41c9eff9acd" class="m-doc-self">empty</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+<p>Checks if the type set is empty. Returns <code>true</code> if the type set holds no elements, otherwise <code>false</code>.</p>
+          </div></section>
+          <section class="m-doc-details" id="a2a685b70ba6dc62471a5fde9343f5c25"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename... Ts&gt;
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">void enum_set::<wbr />type_set&lt;Ts&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2a685b70ba6dc62471a5fde9343f5c25" class="m-doc-self">add</a>(</span><span class="m-doc-wrap">) &amp; <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+<p>Adds an element <code>T</code> to the type set. If the element already exists, no effects take place.</p>
+          </div></section>
+          <section class="m-doc-details" id="a03dffd1d92b213d3abb398f45b27a13d"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename... Ts&gt;
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">void enum_set::<wbr />type_set&lt;Ts&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a03dffd1d92b213d3abb398f45b27a13d" class="m-doc-self">remove</a>(</span><span class="m-doc-wrap">) &amp; <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+<p>Removes the element <code>T</code> from the type set. If the element does not exists, no effects take place.</p>
+          </div></section>
+          <section class="m-doc-details" id="a76f1132e48d81bef471f6b0268b2c619"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename... Ts&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> enum_set::<wbr />type_set&lt;Ts&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a76f1132e48d81bef471f6b0268b2c619" class="m-doc-self">operator~</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+<p>Returns the set complement of a type set. The set complement contains all elements not contained in the original type set.</p>
+          </div></section>
+          <section class="m-doc-details" id="ab21b6aba4cdbd8f3ac9065d1e53e8f6e"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename... Ts&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a>&amp; enum_set::<wbr />type_set&lt;Ts&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab21b6aba4cdbd8f3ac9065d1e53e8f6e" class="m-doc-self">operator|=</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; another) &amp; <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+<p>Adds all elements of another type set to this. Works like an in place set union, see <code>operator|</code> for details. Returns a reference to this type set.</p>
+          </div></section>
+          <section class="m-doc-details" id="a6ae4b12cf6aba7a1807e7f875dc9f08e"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename... Ts&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a>&amp; enum_set::<wbr />type_set&lt;Ts&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6ae4b12cf6aba7a1807e7f875dc9f08e" class="m-doc-self">operator&amp;=</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; another) &amp; <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+<p>Restricts all elements in this type set to those contained in another type set. Works like an in place set intersection. See <code>operator&amp;</code> for details. Returns a reference to this type set.</p>
+          </div></section>
+          <section class="m-doc-details" id="ae5f656d63f86d2750e9e766fc61e17e9"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename... Ts&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a>&amp; enum_set::<wbr />type_set&lt;Ts&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae5f656d63f86d2750e9e766fc61e17e9" class="m-doc-self">operator/=</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; another) &amp; <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+<p>Removes all elements in this type set that are contained in another type set. Works like an in place set difference. See <code>operator/</code> for details. Returns a reference to this type set.</p>
+          </div></section>
+          <section class="m-doc-details" id="a3549bae6a01b682233b9e2f693df161d"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename... Ts&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a>&amp; enum_set::<wbr />type_set&lt;Ts&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3549bae6a01b682233b9e2f693df161d" class="m-doc-self">operator^=</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; other) &amp; <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+<p>Removes all elements in this type set that are contained in another type set, and adds all elements from another type set that are not contained in this type set. Works like an in place symmetric set difference. See <code>operator^</code> for details. Returns a reference to this type set.</p>
+          </div></section>
+          <section class="m-doc-details" id="a803e60c3d6a34429ae4b9002bdd67d30"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename... Ts&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">friend bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a803e60c3d6a34429ae4b9002bdd67d30" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; first,
+              <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; second) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+<p>Checks for equality between two type sets. Returns <code>true</code> if the first contains the same elements as the second, otherwise <code>false</code>.</p>
+          </div></section>
+          <section class="m-doc-details" id="aeafcce76783d9db8c0ae2d583ddb0c84"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename... Ts&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">friend bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aeafcce76783d9db8c0ae2d583ddb0c84" class="m-doc-self">operator!=</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; first,
+              <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; second) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+<p>Checks for inequality between two type sets. See <code>operator==</code> for details.</p>
+          </div></section>
+          <section class="m-doc-details" id="af683f5dfb99aefb1b14bc8df7a6d4ce1"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename... Ts&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">friend <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af683f5dfb99aefb1b14bc8df7a6d4ce1" class="m-doc-self">operator|</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; first,
+              <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; second) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+<p>Returns the set union of two type sets. The set union contains the elements contained in either two type sets.</p>
+          </div></section>
+          <section class="m-doc-details" id="a6d3bc073a74429fe7265231dbf4f4ccc"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename... Ts&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">friend <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6d3bc073a74429fe7265231dbf4f4ccc" class="m-doc-self">operator&amp;</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; first,
+              <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; second) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+<p>Returns the set intersection of two type sets. The set intersection contains the elements contained in both type sets.</p>
+          </div></section>
+          <section class="m-doc-details" id="a297a6f592f782b1e24a0ec1f0b1e609a"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename... Ts&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">friend <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a297a6f592f782b1e24a0ec1f0b1e609a" class="m-doc-self">operator/</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; first,
+              <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; second) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+<p>Returns the set difference between two type sets. The set difference contains all elements in the first set that are not in the second.</p>
+          </div></section>
+          <section class="m-doc-details" id="a36c5400db01dd765782b09b37ecb74db"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename... Ts&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">friend <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a36c5400db01dd765782b09b37ecb74db" class="m-doc-self">operator^</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; first,
+              <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; second) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+<p>Returns the symmetric set difference between two type sets. The result contains all elements in contained in either two type sets but not in both.</p>
+          </div></section>
+          <section class="m-doc-details" id="a20ea316f1ff9ce5afec6ec123e259f56"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename... Ts&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">friend bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a20ea316f1ff9ce5afec6ec123e259f56" class="m-doc-self">operator&lt;=</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; first,
+              <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; second) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+<p>Checks if a type set is a subset of another. A type set is considered a subset of itself. Returns <code>true</code> of the first type set if a subset of the second, otherwise <code>false</code>.</p>
+          </div></section>
+          <section class="m-doc-details" id="a3bb1be192dd4a91f00146ab02085db58"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename... Ts&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">friend bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3bb1be192dd4a91f00146ab02085db58" class="m-doc-self">operator&gt;=</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; first,
+              <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; second) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+<p>Checks if a type set is a superset of another. A type set is considered a superset of itself. Returns <code>true</code> of the first type set if a superset of the second, otherwise <code>false</code>.</p>
+          </div></section>
+          <section class="m-doc-details" id="a0390c3c96d4d231c0c37048bdf3cc750"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename... Ts&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">friend bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0390c3c96d4d231c0c37048bdf3cc750" class="m-doc-self">operator&lt;</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; first,
+              <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; second) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+<p>Checks if a type set is a strict subset of another. A type set is not considered a strict subset of itself. Returns <code>true</code> of the first type set if a strict subset of the second, otherwise <code>false</code>.</p>
+          </div></section>
+          <section class="m-doc-details" id="a70949d68ef6cf2870dd7829dc2f6a8ab"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename... Ts&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">friend bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a70949d68ef6cf2870dd7829dc2f6a8ab" class="m-doc-self">operator&gt;</a>(</span><span class="m-doc-wrap"><a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; first,
+              <a href="classenum__set_1_1type__set.html" class="m-doc">type_<wbr />set</a> const&amp; second) <span class="m-label m-primary">constexpr</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+<p>Checks if a type set is a strict superset of another. A type set is not considered a strict superset of itself. Returns <code>true</code> of the first type set if a strict superset of the second, otherwise <code>false</code>.</p>
+          </div></section>
+        </section>
+        <section>
+          <h2>Variable documentation</h2>
+          <section class="m-doc-details" id="a89d9365a49c818f19c532fbc35595b18"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename... Ts&gt;
+              </div>
+              <a href="classenum__set_1_1type__set.html#a5b208ed74699065e8e4d25d29fd14b4f" class="m-doc">mask_<wbr />type</a> enum_set::<wbr />type_set&lt;Ts&gt;::<wbr /><a href="#a89d9365a49c818f19c532fbc35595b18" class="m-doc-self">mask</a> <span class="m-label m-warning">protected</span>
+            </h3>
+<p>Underlying storage for managing the representation of a type set. Each bit in the <a href="classenum__set_1_1bit__mask.html" class="m-doc">bit_<wbr />mask</a> tells whether a type is contained in the type set or not.</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>enum_set. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>
