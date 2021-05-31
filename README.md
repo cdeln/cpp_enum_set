@@ -123,6 +123,8 @@ See [this example](example/basic_tutorial.cpp) for a tutorial on available metho
 
 See [this example](example/visitation_example.cpp) for an illustration of the visitor pattern with `type_set`.
 
+Reference documentation can be found [here](https://cdeln.github.io/cpp_enum_set).
+
 ## Contributing
 
 Feel free to grab an issue from the [issue list][3]. Make a fork and submit a PR.
