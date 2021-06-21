@@ -1,0 +1,7 @@
+import libs = enum_set%lib{enum_set} magic_enum%lib{magic_enum} doctest%lib{doctest}
+
+exe{run_tests_with_magic_enum}: cxx{*} $libs
+
+exe{*}: test = true
+
+test.target = $cxx.target

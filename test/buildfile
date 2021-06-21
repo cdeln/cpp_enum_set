@@ -1,9 +1,7 @@
-./: {**/ -include/ -magic/} exe{run_tests}
+import libs = enum_set%lib{enum_set} doctest%lib{doctest}
 
-cxx.poptions =+ "-I$src_root/include" "-I$src_root/test/include"
+./: exe{run_tests} magic/
 
-exe{run_tests}: cxx{*} hxx{include/*}
+cxx.poptions =+ "-I$src_root/include"
 
-exe{*}: test = true
-
-test.target = $cxx.target
+exe{run_tests}: cxx{*} hxx{include/*} $libs

@@ -1,0 +1,5 @@
+project = enum_set_tests
+
+using config
+using test
+using dist

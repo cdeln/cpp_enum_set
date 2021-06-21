@@ -1,6 +1,6 @@
 $out_root/
 {
-    include enum_set/
+    include include/enum_set/
 }
 
-export $out_root/enum_set/$import.target
+export $out_root/include/enum_set/$import.target
