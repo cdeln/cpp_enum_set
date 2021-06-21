@@ -1,0 +1,9 @@
+./: {**/ -include/ -magic/} exe{run_tests}
+
+cxx.poptions =+ "-I$src_root/include" "-I$src_root/test/include"
+
+exe{run_tests}: cxx{*} hxx{include/*}
+
+exe{*}: test = true
+
+test.target = $cxx.target

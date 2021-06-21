@@ -1,0 +1,6 @@
+$out_root/
+{
+    include enum_set/
+}
+
+export $out_root/enum_set/$import.target

@@ -1,0 +1,23 @@
+lib{enum_set}: hxx{**}
+
+hxx{version}: in{version} $src_root/manifest
+{
+    dist  = true
+    clean = ($src_root != $out_root)
+}
+
+lib{enum_set}:
+{
+    cxx.export.poptions = "-I$out_root" "-I$src_root"
+}
+
+if $version.pre_release
+    lib{enum_set}: bin.lib.version = @"-$version.project_id"
+else
+    lib{enum_set}: bin.lib.version = @"-$version.major.$version.minor"
+
+{hxx}{*}:
+{
+    install         = include/enum_set/
+    install.subdirs = true
+}
