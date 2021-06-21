@@ -2,7 +2,7 @@ import libs = magic_enum%lib{magic_enum}
 
 lib{enum_set}: hxx{*}
 
-lib{enum_set}: hxx{magic/*} $libs
+lib{enum_set}: hxx{magic/*} hxx{version} $libs
 
 hxx{version}: in{version} $src_root/manifest
 {
