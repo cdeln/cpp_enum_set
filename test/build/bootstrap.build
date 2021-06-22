@@ -1,4 +1,4 @@
-project = enum_set_tests
+project =
 
 using config
 using test
