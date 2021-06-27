@@ -5,3 +5,7 @@ import libs = enum_set%lib{enum_set} doctest%lib{doctest}
 cxx.poptions =+ "-I$src_root/include"
 
 exe{run_tests}: cxx{*} hxx{include/*} $libs
+
+exe{*}: test = true
+
+test.target = $cxx.target
