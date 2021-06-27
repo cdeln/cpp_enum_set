@@ -1,6 +1,6 @@
 : 1
 name: enum_set
-version: 0.1.0
+version: 0.1.0-a.0.z
 summary: A library of type safe sets over fixed size collections of types or values, including methods for accessing, modifying, visiting and iterating over those
 license: MIT
 topics: enum sets, type safety
@@ -16,6 +16,6 @@ requires: c++ >= 14
 depends: * build2 >= 0.13.0
 depends: * bpkg >= 0.13.0
 depends: * doctest ^2.3.6  ; For testing
-depends: magic_enum ^0.7.2 ; For magic enum integration
+depends: magic_enum ~0.7.2 ; For magic enum integration
 
 builds: linux : &gcc-10+
