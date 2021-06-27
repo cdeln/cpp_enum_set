@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.14)
 
 include(cmake/in-source-guard.cmake)
 
-set(CPP_ENUM_SET_VERSION 0.1.0 )
+set(CPP_ENUM_SET_VERSION 0.1.0-a.0.z )
 
 project(
     enum_set
