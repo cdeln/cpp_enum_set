@@ -1,3 +1,4 @@
-./: include/enum_set/ test/ doc{README.md LICENSE} manifest
+./: include/enum_set/ test/ example/ doc{README.md LICENSE} manifest
 
 test/: install = false
+example/: install = false

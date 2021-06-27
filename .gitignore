@@ -2,7 +2,7 @@ CMakeUserPresets.json
 Testing/
 build/bootstrap
 prefix/
-test/build/bootstrap/
+bootstrap/
 .cache/
 .vcpkg/
 .bdep/

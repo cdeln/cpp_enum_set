@@ -1,0 +1,9 @@
+import libs = enum_set%lib{enum_set}
+
+./: exe{rationale} exe{visitation_example} exe{basic_tutorial} magic/
+
+cxx.poptions =+ "-I$src_root/include"
+
+exe{rationale}: cxx{rationale} $libs
+exe{basic_tutorial}: cxx{basic_tutorial} $libs
+exe{visitation_example}: cxx{visitation_example} $libs
