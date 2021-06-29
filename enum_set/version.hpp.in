@@ -1,0 +1,34 @@
+#pragma once
+
+// The numeric version format is AAAAABBBBBCCCCCDDDE where:
+//
+// AAAAA - major version number
+// BBBBB - minor version number
+// CCCCC - bugfix version number
+// DDD   - alpha / beta (DDD + 500) version number
+// E     - final (0) / snapshot (1)
+//
+// When DDDE is not 0, 1 is subtracted from AAAAABBBBBCCCCC. For example:
+//
+// Version      AAAAABBBBBCCCCCDDDE
+//
+// 0.1.0        0000000001000000000
+// 0.1.2        0000000001000020000
+// 1.2.3        0000100002000030000
+// 2.2.0-a.1    0000200001999990010
+// 3.0.0-b.2    0000299999999995020
+// 2.2.0-a.1.z  0000200001999990011
+//
+#define ENUM_SET_VERSION       $enum_set.version.project_number$ULL
+#define ENUM_SET_VERSION_STR   "$enum_set.version.project$"
+#define ENUM_SET_VERSION_ID    "$enum_set.version.project_id$"
+#define ENUM_SET_VERSION_FULL  "$enum_set.version$"
+
+#define ENUM_SET_VERSION_MAJOR $enum_set.version.major$
+#define ENUM_SET_VERSION_MINOR $enum_set.version.minor$
+#define ENUM_SET_VERSION_PATCH $enum_set.version.patch$
+
+#define ENUM_SET_PRE_RELEASE   $enum_set.version.pre_release$
+
+#define ENUM_SET_SNAPSHOT_SN   $enum_set.version.snapshot_sn$ULL
+#define ENUM_SET_SNAPSHOT_ID   "$enum_set.version.snapshot_id$"

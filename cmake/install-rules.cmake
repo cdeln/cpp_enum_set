@@ -11,7 +11,7 @@ if(enum_set_USE_MAGIC_ENUM)
 endif()
 
 install(
-    DIRECTORY "${PROJECT_SOURCE_DIR}/include/"
+    DIRECTORY "${PROJECT_SOURCE_DIR}/enum_set/"
     DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
     COMPONENT enum_set_Development
     ${filter}

@@ -1,0 +1,13 @@
+import libs = enum_set%lib{enum_set} doctest%lib{doctest}
+
+./: exe{run_tests} magic/
+
+cxx.poptions =+ "-I$src_root/include"
+
+exe{run_tests}: cxx{*} hxx{include/*} $libs
+
+exe{**}:
+{
+    install         = bin/enum_set/
+    install.subdirs = true
+}

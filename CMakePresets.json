@@ -51,7 +51,7 @@
     },
     {
       "name": "ci-build",
-      "binaryDir": "${sourceDir}/build",
+      "binaryDir": "${sourceDir}/cmake-out",
       "hidden": true
     },
     {

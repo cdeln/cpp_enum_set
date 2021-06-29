@@ -1,6 +1,9 @@
-build/
-prefix/
 CMakeUserPresets.json
-.cache
-.vcpkg
 Testing/
+build/bootstrap
+prefix/
+bootstrap/
+cmake-out/
+.cache/
+.vcpkg/
+.bdep/

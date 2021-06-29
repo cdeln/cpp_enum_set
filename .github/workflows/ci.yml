@@ -31,10 +31,10 @@ jobs:
         -D "VCPKG_MANIFEST_FEATURES=test;magic-enum"
 
     - name: Build
-      run: cmake --build build -j 2
+      run: cmake --build cmake-out -j 2
 
     - name: Test
-      working-directory: build
+      working-directory: cmake-out
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         PS4: "\e[36m+++\e[0m "
@@ -71,7 +71,7 @@ jobs:
         -D "VCPKG_MANIFEST_FEATURES=test${{ matrix.features }}"
 
     - name: Build
-      run: cmake --build build -j 2
+      run: cmake --build cmake-out -j 2
 
     - name: Test
       env:
@@ -81,7 +81,7 @@ jobs:
           strict_init_order=1:\
           detect_leaks=1"
         UBSAN_OPTIONS: print_stacktrace=1
-      run: ctest --test-dir build --output-on-failure -j 2
+      run: ctest --test-dir cmake-out --output-on-failure -j 2
 
   test:
     name: "test (${{ matrix.os }}\
@@ -115,13 +115,13 @@ jobs:
         -D "VCPKG_MANIFEST_FEATURES=test${{ matrix.features }}"
 
     - name: Build
-      run: cmake --build build --config Release -j 2
+      run: cmake --build cmake-out --config Release -j 2
 
     - name: Install
-      run: cmake --install build --config Release --prefix prefix
+      run: cmake --install cmake-out --config Release --prefix prefix
 
     - name: Test
-      run: ctest --test-dir build --output-on-failure -C Release -j 2
+      run: ctest --test-dir cmake-out --output-on-failure -C Release -j 2
 
   docs:
     runs-on: ubuntu-latest
@@ -149,10 +149,10 @@ jobs:
       run: cmake --preset=ci-ubuntu -D BUILD_DOCUMENTATION=ON -D BUILD_TESTING=OFF
 
     - name: Build
-      run: cmake --build build --target docs
+      run: cmake --build cmake-out --target docs
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build/docs/html
+        publish_dir: ./cmake-out/docs/html
