@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.14)
 
 include(cmake/in-source-guard.cmake)
 
-set(CPP_ENUM_SET_VERSION 0.1.0-a.0.z )
+set(CPP_ENUM_SET_VERSION 0.1.0 )
 
 project(
     enum_set
@@ -29,7 +29,7 @@ target_include_directories(
     enum_set_enum_set
     ${enum_set_warning_guard}
     INTERFACE
-    "$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>"
+    "$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>"
 )
 
 # The following properties are only applied during build time
