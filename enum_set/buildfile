@@ -1,4 +1,4 @@
-import libs = magic_enum%lib{magic_enum}
+import libs = magic_enum%lib{magic_enum} doctest%lib{doctest}
 
 lib{enum_set}: hxx{*}
 
@@ -13,6 +13,7 @@ hxx{version}: in{version} $src_root/manifest
 lib{enum_set}:
 {
     cxx.export.poptions = "-I$out_root/" "-I$src_root/"
+    cxx.export.libs = $libs
 }
 
 if $version.pre_release
