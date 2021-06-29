@@ -18,5 +18,3 @@ depends: * build2 >= 0.13.0
 depends: * bpkg >= 0.13.0
 depends: doctest ^2.3.6    ; For testing.
 depends: magic_enum ~0.7.2 ; For magic enum integration.
-
-builds: linux : &gcc-10+
