@@ -3,6 +3,7 @@ Testing/
 build/bootstrap
 prefix/
 bootstrap/
+cmake-out/
 .cache/
 .vcpkg/
 .bdep/
