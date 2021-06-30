@@ -67,11 +67,11 @@ Requires at least C++14, and C++17 if you want to use it together with [magic en
 
 There are two ways of installing this library
 
-    1. Poor mans installation: Just copy the contents of the `enum_set` folder to your installation path.
-    2. Using [build2](https://build2.org/):
-        1. To install globally on your machine, clone this repo and run `b install` (with admin privileges ofc).
-        2. If you are using `build2` for building your code, then just delcare `enum_set` as a dependency in your `manifest` and import it in your `buildfile`.
-    3. Using CMake: see [BUILDING][1] for detailed installation instructions.
+   1. Poor mans installation: Just copy the contents of the `enum_set` folder to your installation path.
+   2. Using [build2](https://build2.org/):
+      1. To install globally on your machine, clone this repo and run `b install` (with admin privileges ofc).
+      2. If you are using `build2` for building your code, then just delcare `enum_set` as a dependency in your `manifest` and import it in your `buildfile`.
+   3. Using CMake: see [BUILDING][1] for detailed installation instructions.
 
 ## Usage
 
