@@ -1,0 +1,7 @@
+: 1
+name: enum_set
+version: 0.1.0-a.1
+summary: A library of type safe sets over fixed size collections of types or\
+ values, including methods for accessing, modifying, visiting and iterating\
+ over those.
+license: MIT; MIT License.
