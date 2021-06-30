@@ -69,8 +69,8 @@ There are two ways of installing this library
 
     1. Poor mans installation: Just copy the contents of the `enum_set` folder to your installation path.
     2. Using [build2](https://build2.org/):
-        - To install globally on your machine, clone this repo and run `b install` (with admin privileges ofc).
-        - If you are using `build2` for building your code, then just delcare `enum_set` as a dependency in your `manifest` and import it in your `buildfile`.
+        1. To install globally on your machine, clone this repo and run `b install` (with admin privileges ofc).
+        2. If you are using `build2` for building your code, then just delcare `enum_set` as a dependency in your `manifest` and import it in your `buildfile`.
     3. Using CMake: see [BUILDING][1] for detailed installation instructions.
 
 ## Usage
