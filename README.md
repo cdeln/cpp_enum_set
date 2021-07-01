@@ -67,18 +67,21 @@ Requires at least C++14, and C++17 if you want to use it together with [magic en
 
 There are two ways of installing this library
 
-  1. Poor mans installation: Just copy the contents of the `include` folder to your installation path.
-  2. Using CMake: see [BUILDING][1] for detailed installation instructions.
+   1. Poor mans installation: Just copy the `enum_set` folder to your installation path.
+   2. Using [build2](https://build2.org/):
+      1. To install globally on your machine, clone this repo and run `b install` (with admin privileges ofc).
+      2. If you are using `build2` for building your code, then just delcare `enum_set` as a dependency in your `manifest` and import it in your `buildfile`.
+   3. Using CMake: see [BUILDING][1] for detailed installation instructions.
 
 ## Usage
 
 The library provides a `type_set` class for holding a set of types and `value_set` class for holding a set of values.
 
 If you roll with strong enums (that is, struct with class tags),
-use the `type_set` class (defined in [`<enum_set/type_set.hpp>`](include/enum_set/type_set.hpp)).
+use the `type_set` class (defined in [`<enum_set/type_set.hpp>`](https://github.com/cdeln/cpp_enum_set/blob/master/enum_set/type_set.hpp)).
 
 If you want to model a set over a fixed collection of values, use the `value_set` class
-(defined in [`<enum_set/value_set.hpp>`](include/enum_set/value_set.hpp)).
+(defined in [`<enum_set/value_set.hpp>`](https://github.com/cdeln/cpp_enum_set/blob/master/enum_set/value_set.hpp)).
 The `value_set` is a refinement of the `type_set` class that replaces type like semantics with value like.
 Thus, if `type_set` provides a template method that accepts a type,
 `value_set` provides the a method with the same name accepting a value (of the given type) instead.
@@ -86,21 +89,21 @@ In addition to the capabilities provided by `type_set`, `value_set` also provide
 (there is support for visitation which is more safe and also works for `type_set`).
 
 The library provides type aliases
-`integer_set` (defined in [`<enum_set/integer_set.hpp>`](include/enum_set/integer_set.hpp))
-and `index_set` (defined in [`<enum_set<index_set.hpp>`](include/enum_set/index_set.hpp))
+`integer_set` (defined in [`<enum_set/integer_set.hpp>`](https://github.com/cdeln/cpp_enum_set/blob/master/enum_set/integer_set.hpp))
+and `index_set` (defined in [`<enum_set<index_set.hpp>`](https://github.com/cdeln/cpp_enum_set/blob/master/enum_set/index_set.hpp))
 for a `value_set` of integers or indices (a.k.a. `std::size_t`) respectively.
 Meta functions `make_integer_set` and `make_index_set` for creating sets over contiguous ranges of integers or indices are also provided
 (mimicks the style used by STL's `std::make_integer_sequence` and `std::make_index_sequence`).
 
 Finally, if you use enums (*drumroll*...), you can use the `make_enum_set` meta function
-(defined in [`<enum_set/enum_set.hpp>`](include/enum_set/enum_set.hpp)).
+(defined in [`<enum_set/enum_set.hpp>`](https://github.com/cdeln/cpp_enum_set/blob/master/enum_set/enum_set.hpp)).
 This assumes that you do not set the enumeration values manually (e.g. as powers of two),
 Also, as seen in the rationale example in the beginning, note that you have to explicitly provide the last enumeration value
 (until C++ have better built in reflection capabilities for enums).
 If you can use C++17, are willing to sacrifice standardness and to introduce another dependency,
 integration with [magic enum](https://github.com/Neargye/magic_enum) is provided and you can create
 a `value_set` conveniently using the `make_magic_enum_set` meta function
-(defined in [`<enum_set/magic/magic_enum_set.hpp>`](include/enum_set/magic/magic_enum_set.hpp))
+(defined in [`<enum_set/magic/magic_enum_set.hpp>`](https://github.com/cdeln/cpp_enum_set/blob/master/enum_set/magic/magic_enum_set.hpp))
 as follows
 
 ```cpp
@@ -119,9 +122,9 @@ using option_set =
     >;
 ```
 
-See [this example](example/basic_tutorial.cpp) for a tutorial on available methods and operators.
+See [this example](https://github.com/cdeln/cpp_enum_set/blob/master/example/basic_tutorial.cpp) for a tutorial on available methods and operators.
 
-See [this example](example/visitation_example.cpp) for an illustration of the visitor pattern with `type_set`.
+See [this example](https://github.com/cdeln/cpp_enum_set/blob/master/example/visitation_example.cpp) for an illustration of the visitor pattern with `type_set`.
 
 Reference documentation can be found [here](https://cdeln.github.io/cpp_enum_set).
 
@@ -139,8 +142,8 @@ Running the instructions given by the other documents inside the built container
 The Dockerfile should, but is not guaranteed to, reflect the steps used by the CI.
 To see the exact steps used by the CI, see the [GitHub workflow config file][5].
 
-[1]: BUILDING.md
-[2]: HACKING.md
+[1]: https://github.com/cdeln/cpp_enum_set/blob/master/BUILDING.md
+[2]: https://github.com/cdeln/cpp_enum_set/blob/master/HACKING.md
 [3]: https://github.com/cdeln/cpp_enum_set/issues
-[4]: Dockerfile
-[5]: .github/workflows/ci.yml
+[4]: https://github.com/cdeln/cpp_enum_set/blob/master/Dockerfile
+[5]: https://github.com/cdeln/cpp_enum_set/blob/master/.github/workflows/ci.yml
